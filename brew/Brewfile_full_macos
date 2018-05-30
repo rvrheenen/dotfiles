@@ -3,6 +3,14 @@ tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/bundle"
 
-cask 'transmission'
+cask "avast-security"
+cask "dropbox"
+cask "flux"
 cask "keepingyouawake"
+cask "malwarebytes"
+cask "spotify"
 cask "shiftit"
+cask "stack"
+cask "teamviewer"
+cask 'transmission'
+cask 'xscreensaver'
