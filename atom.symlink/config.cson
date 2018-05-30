@@ -1,19 +1,19 @@
 "*":
   "atom-beautify":
     crystal:
-      beautify_on_save: true
+      beautify_on_save: false
     css:
-      beautify_on_save: true
+      beautify_on_save: false
     html:
-      beautify_on_save: true
+      beautify_on_save: false
     js:
       disabled: true
     jsx:
       disabled: true
     markdown:
-      beautify_on_save: true
+      beautify_on_save: false
     nginx:
-      beautify_on_save: true
+      beautify_on_save: false
     ruby:
       default_beautifier: "Ruby Beautify"
   "autocomplete-modules":
@@ -22,25 +22,7 @@
   core:
     closeDeletedFileTabs: true
     closeEmptyWindows: false
-    customFileTypes:
-      "source.ini": [
-        ".buckconfig"
-        ".hgrc"
-        ".flowconfig"
-      ]
-      "source.json": [
-        "BUCK.autodeps"
-      ]
-      "source.python": [
-        "BUCK"
-      ]
     disabledPackages: [
-      "background-tips"
-      "exception-reporting"
-      "metrics"
-      "react"
-      "linter-rubocop"
-      "tree-view"
     ]
     followSymlinks: false
     hideGitIgnoredFiles: true
@@ -54,14 +36,16 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "one-light-ui"
-      "one-light-syntax"
+      "one-dark-ui"
+      "one-dark-syntax"
     ]
   editor:
     fontFamily: "Menlo"
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
+    showInvisibles = true
+    tabLength = 4
   "go-plus":
     panel:
       currentHeight: "24.11111111111111vh"
@@ -78,9 +62,7 @@
     "nuclide-flow": {}
   "prettier-atom":
     formatOnSaveOptions:
-      enabled: true
-  "release-notes":
-    viewedVersion: "0.89.0"
+      enabled: false
   "spell-check":
     grammars: [
       "text.plain"
