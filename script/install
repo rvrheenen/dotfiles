@@ -2,13 +2,42 @@
 #
 # Run all dotfiles installers.
 
+user () {
+  printf "\r  [ \033[0;33m??\033[0m ] $1\n"
+}
+
 set -e
 
 cd "$(dirname $0)"/..
 
 # Run Homebrew through the Brewfile
 echo "› brew bundle"
-brew bundle
+
+user "Do you want the basic or the full installation?\\n\
+1: basic  2: full"
+read -n 1 install
+
+brew bundle --file=${DOTFILES}/brew/Brewfile_basic
+if [ $install = "2" ] || [ $install = "full" ]
+then
+    brew bundle --file=${DOTFILES}/brew/Brewfile_full
+fi
+
+if test "$(uname)" = "Darwin"
+then
+  brew bundle --file=${DOTFILES}/brew/Brewfile_basic_macos
+  if [ $install = "2" ] || [ $install = "full" ]
+  then
+      brew bundle --file=${DOTFILES}/brew/Brewfile_full_macos
+  fi
+elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
+then
+  brew bundle --file=${DOTFILES}/brew/Brewfile_basic_linux
+  if [ $install = "2" ] || [ $install = "full" ]
+  then
+      brew bundle --file=${DOTFILES}/brew/Brewfile_full_linux
+  fi
+fi
 
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done

@@ -1,0 +1,14 @@
+tap "heroku/brew"
+tap "homebrew/core"
+tap "homebrew/cask"
+tap "homebrew/bundle"
+
+cask '1password'
+cask 'atom'
+cask 'firefox'
+cask 'google-chrome'
+cask 'steam'
+cask 'tunnelbear'
+cask 'vlc'
+cask "android-platform-tools"
+cask "db-browser-for-sqlite"
